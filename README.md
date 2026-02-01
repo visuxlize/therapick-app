@@ -2,6 +2,8 @@
 
 A modern, mobile-first therapist discovery app that matches you with mental health professionals based on how you're feeling. Complete with appointment booking, mood tracking, and a beautiful, calming interface.
 
+Live Demo: [Therapick Site](https://therapick.netlify.app/)
+
 ## 🌟 The Problem
 
 Finding a therapist can be an overwhelming experience:
