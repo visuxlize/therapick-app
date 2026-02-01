@@ -166,10 +166,10 @@ therapick-app/
 ## 👨‍💻 Author
 
 **Andres Marte**
-- Portfolio: [mandres1995.wixsite.com/andres-marte-portfol](https://mandres1995.wixsite.com/andres-marte-portfol)
+- Portfolio: [[Portfolio](https://visuxlize.github.io/portfolio/)
 - GitHub: [@visuxlize](https://github.com/visuxlize)
 
-## 🌈 Mental Health Resources
+## Mental Health Resources
 
 If you're in crisis:
 - **National Suicide Prevention Lifeline**: 988
