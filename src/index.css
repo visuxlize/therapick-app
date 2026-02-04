@@ -264,7 +264,7 @@ body {
 }
 
 .hero-section-modern {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px;
   text-align: center;
@@ -284,13 +284,13 @@ body {
   margin-bottom: 40px;
 }
 
-/* Mood Grid - Evenly Distributed */
+/* Mood Grid - FULLY RESPONSIVE */
 .mood-grid-modern {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 40px;
-  max-width: 600px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -329,6 +329,7 @@ body {
   color: var(--primary);
   display: block;
   margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .mood-card-modern.selected .mood-icon-modern {
@@ -339,6 +340,7 @@ body {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--neutral);
+  line-height: 1.2;
 }
 
 .mood-card-modern.selected .mood-label-modern {
@@ -369,7 +371,7 @@ body {
   padding: 40px 20px;
   background: var(--accent);
   border-radius: 24px;
-  max-width: 600px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -455,7 +457,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(115, 130, 144, 0.3);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -463,7 +465,7 @@ body {
 }
 
 .carousel-dot.active {
-  background: white;
+  background: var(--primary);
   width: 24px;
   border-radius: 4px;
 }
@@ -1044,6 +1046,7 @@ body {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
 }
 
 .mood-date-selector label {
@@ -1432,6 +1435,7 @@ body {
   border-top: 1px solid #f0f0f0;
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .modal-reschedule-button,
@@ -1447,6 +1451,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
+  min-width: 140px;
 }
 
 .modal-reschedule-button {
@@ -1903,6 +1908,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .write-review-button {
@@ -1958,6 +1965,7 @@ body {
   display: flex;
   gap: 12px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .cancel-button,
@@ -2000,6 +2008,8 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .reviewer-info {
@@ -2104,15 +2114,150 @@ body {
   font-size: 1.2rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .mood-grid-modern {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .hero-section-modern {
+    max-width: 1000px;
   }
   
-  .testimonials-carousel {
-    gap: 12px;
+  .mood-grid-modern {
+    max-width: 900px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .mood-icon-modern {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .mood-label-modern {
+    font-size: 1rem;
+  }
+  
+  .testimonials-section {
+    max-width: 900px;
+  }
+}
+
+/* Desktop (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .hero-section-modern {
+    max-width: 900px;
+  }
+  
+  .mood-grid-modern {
+    max-width: 800px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  
+  .mood-icon-modern {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .testimonials-section {
+    max-width: 800px;
+  }
+}
+
+/* Tablet Landscape / iPad Pro (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-section-modern h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .mood-grid-modern {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 700px;
+  }
+  
+  .mood-icon-modern {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mood-label-modern {
+    font-size: 0.85rem;
+  }
+  
+  .testimonials-section {
+    max-width: 700px;
+  }
+  
+  .therapist-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bottom-nav-button {
+    min-width: 90px;
+    padding: 8px 24px;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .mood-calendar-grid {
+    grid-template-columns: repeat(15, 1fr);
+  }
+}
+
+/* Tablet Portrait / iPad (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-section-modern {
+    padding: 30px 16px;
+  }
+  
+  .hero-section-modern h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+  
+  .mood-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 0 12px;
+  }
+  
+  .mood-card-modern {
+    padding: 14px 8px;
+  }
+  
+  .mood-icon-modern {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .mood-label-modern {
+    font-size: 0.8rem;
+  }
+  
+  .search-button-modern {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+  
+  .testimonials-section {
+    padding: 32px 16px;
+  }
+  
+  .testimonial-card {
+    padding: 24px;
   }
   
   .carousel-button {
@@ -2120,23 +2265,60 @@ body {
     height: 36px;
   }
   
-  .testimonial-card {
-    padding: 20px;
+  .therapist-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .bottom-nav-button {
+    min-width: 75px;
+    padding: 8px 16px;
+  }
+  
+  .bottom-nav-button span {
+    font-size: 0.7rem;
   }
   
   .time-slots {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .detail-cta {
-    bottom: 80px;
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal-reschedule-button,
+  .modal-cancel-button {
+    width: 100%;
+  }
+  
+  .mood-tracker-buttons {
+    gap: 10px;
+  }
+  
+  .mood-button {
+    min-width: 70px;
+    padding: 10px 12px;
+  }
+  
+  .mood-calendar-grid {
+    grid-template-columns: repeat(10, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Landscape (426px - 480px) */
+@media (min-width: 426px) and (max-width: 480px) {
+  .hero-section-modern h1 {
+    font-size: 1.8rem;
+  }
+  
   .mood-grid-modern {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .mood-card-modern {
+    padding: 12px 6px;
   }
   
   .mood-icon-modern {
@@ -2148,8 +2330,243 @@ body {
     font-size: 0.75rem;
   }
   
+  .search-button-modern {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+  
+  .testimonials-section {
+    padding: 28px 14px;
+  }
+  
+  .carousel-button {
+    display: none;
+  }
+  
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .mood-calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* Mobile Portrait (360px - 425px) */
+@media (min-width: 360px) and (max-width: 425px) {
+  .page-content {
+    padding: 16px 12px;
+  }
+  
+  .hero-section-modern {
+    padding: 24px 12px;
+  }
+  
+  .hero-section-modern h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+  
+  .mood-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0 8px;
+  }
+  
+  .mood-card-modern {
+    padding: 10px 6px;
+    gap: 6px;
+  }
+  
+  .mood-icon-modern {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .mood-label-modern {
+    font-size: 0.7rem;
+  }
+  
+  .search-button-modern {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .testimonials-section {
+    padding: 24px 12px;
+    margin-top: 40px;
+  }
+  
+  .testimonials-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .carousel-button {
+    display: none;
+  }
+  
   .bottom-nav-button {
-    padding: 8px 16px;
     min-width: 70px;
+    padding: 6px 12px;
+  }
+  
+  .bottom-nav-button span {
+    font-size: 0.65rem;
+  }
+  
+  .therapist-card-top {
+    padding: 20px;
+    min-height: 120px;
+  }
+  
+  .therapist-avatar-large {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .time-slots {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .time-slot {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+  
+  .mood-date-selector {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .mood-tracker-buttons {
+    gap: 8px;
+  }
+  
+  .mood-button {
+    min-width: 65px;
+    padding: 10px;
+    font-size: 0.75rem;
+  }
+  
+  .mood-calendar-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+  }
+  
+  .detail-cta {
+    width: calc(100% - 24px);
+  }
+  
+  .book-button {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile (320px - 359px) */
+@media (max-width: 359px) {
+  .page-content {
+    padding: 12px 8px;
+  }
+  
+  .hero-section-modern {
+    padding: 20px 8px;
+  }
+  
+  .hero-section-modern h1 {
+    font-size: 1.4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+  
+  .mood-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 0 6px;
+  }
+  
+  .mood-card-modern {
+    padding: 8px 4px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+  
+  .mood-icon-modern {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .mood-label-modern {
+    font-size: 0.65rem;
+  }
+  
+  .search-button-modern {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .testimonials-section {
+    padding: 20px 10px;
+  }
+  
+  .testimonials-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .testimonial-card {
+    padding: 16px;
+  }
+  
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-button {
+    display: none;
+  }
+  
+  .bottom-nav-button {
+    min-width: 60px;
+    padding: 6px 8px;
+  }
+  
+  .bottom-nav-button span {
+    font-size: 0.6rem;
+  }
+  
+  .therapist-avatar-large {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  
+  .time-slots {
+    grid-template-columns: 1fr;
+  }
+  
+  .mood-button {
+    min-width: 60px;
+    padding: 8px;
+    font-size: 0.7rem;
+  }
+  
+  .mood-calendar-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3px;
   }
 }
