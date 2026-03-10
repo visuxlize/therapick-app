@@ -24,7 +24,8 @@ export async function login() {
     if (existingUser.length === 0) {
       await db.insert(users).values({
         id: user.id,
-        email: user.email,
+        email: user.email ?? "",
+        name: user.user_metadata?.full_name ?? user.user_metadata?.name ?? null,
       });
     }
 

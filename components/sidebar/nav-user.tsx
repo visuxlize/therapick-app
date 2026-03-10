@@ -47,8 +47,8 @@ function getInitials(name: string | null, email: string | null) {
 export function NavUser() {
   const user = useAuth()
   const { isMobile } = useSidebar()
-  const initials = getInitials(user.fullName, user.email)
-  const displayName = user.fullName ?? user.email ?? ""
+  const initials = getInitials(user.name ?? null, user.email ?? null)
+  const displayName = user.name ?? user.email ?? ""
 
   const { data: subscription } = trpc.stripe.getSubscriptionStatus.useQuery()
   const isActive = subscription?.isActive ?? false

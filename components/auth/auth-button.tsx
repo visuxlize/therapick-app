@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 
 export async function AuthButton() {
   const supabase = await createClient();
-
-  const { data } = await supabase.auth.getClaims();
-
+  const { data } = supabase
+    ? await supabase.auth.getClaims()
+    : { data: null };
   const user = data?.claims;
 
   return user ? (

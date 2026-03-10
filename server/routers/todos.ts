@@ -18,7 +18,9 @@ export const todosRouter = router({
       .map((t) => t.imagePath)
       .filter((p): p is string => p !== null);
 
-    const signedUrls = await getSignedUrls(ctx.supabase, imagePaths);
+    const signedUrls = ctx.supabase
+      ? await getSignedUrls(ctx.supabase, imagePaths)
+      : new Map<string, string>();
 
     return userTodos.map((todo) => ({
       ...todo,
@@ -104,7 +106,7 @@ export const todosRouter = router({
         throw new TRPCError({ code: "NOT_FOUND", message: "Todo not found" });
       }
 
-      if (deleted.imagePath) {
+      if (deleted.imagePath && ctx.supabase) {
         await ctx.supabase.storage
           .from(BUCKET_NAME)
           .remove([deleted.imagePath]);
